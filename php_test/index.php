@@ -21,4 +21,9 @@ echo $test1 . $test2;
 // 型と値を吐くメソッド。デバックで使う。
 var_dump($test1);
 echo $test1;
+
+
+
+$test = 123;
+phpinfo();
 ?>
