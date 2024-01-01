@@ -12,10 +12,13 @@ echo 'こちらはPHPです';
 
 // 変数
 // 動的型付け これは数字だな、じゃintだな。と自動で型付けしてくれる。
-$test = 123;
-$test = 456;
+$test1 = 123;
+$test2 = 456;
 
-// 型と値を吐くメソッド
-var_dump($test);
-echo $test;
+// 変数足す変数は文字列になる
+echo $test1 . $test2;
+
+// 型と値を吐くメソッド。デバックで使う。
+var_dump($test1);
+echo $test1;
 ?>
