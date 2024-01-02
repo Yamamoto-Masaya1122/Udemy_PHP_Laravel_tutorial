@@ -152,34 +152,45 @@ $token = $_SESSION['csrfToken'];
       <input type="radio" class="form-check-input" name="gender" id="gender1" value="0" 
       <?php if(isset($_POST['gender']) && $_POST['gender'] === '0' )
       { echo 'checked'; } ?>>
-      <label class="form-check-label" for="gender1"></label>
+      <label class="form-check-label">男性</label>
       <input type="radio" class="form-check-input" name="gender" id="gender2" value="1"
       <?php if(isset($_POST['gender']) && $_POST['gender'] === '1' )
       { echo 'checked'; } ?>>
-      <label class="form-check-label" for="gender2"></label>
+      <label class="form-check-label">女性</label>
     </div>
-年齢
-<select name="age">
-  <option value="">選択してください</option>
-  <option value="1">〜19歳</option>
-  <option value="2">20歳〜29歳</option>
-  <option value="3">30歳〜39歳</option>
-  <option value="4">40歳〜49歳</option>
-  <option value="5">50歳〜59歳</option>
-  <option value="6">60歳〜</option>
-</select> 
-<br>
-お問い合わせ内容
-<textarea name="contact">
-<?php if(!empty($_POST['contact'])){echo h($_POST['contact']) ;} ?>
-</textarea>
-<br>
-<input type="checkbox" name="caution" value="1">注意事項にチェックする
-<br>
 
-<input type="submit" name="btn_confirm" value="確認する">
-<input type="hidden" name="csrf" value="<?php echo $token; ?>">
-</form>
+    <div class="form-group">
+      <label for="age">年齢</label>
+      <select class="form-control" id="age" name="age">
+        <option value="">選択してください</option>
+        <option value="1">〜19歳</option>
+        <option value="2">20歳〜29歳</option>
+        <option value="3">30歳〜39歳</option>
+        <option value="4">40歳〜49歳</option>
+        <option value="5">50歳〜59歳</option>
+        <option value="6">60歳〜</option>
+      </select> 
+    </div>
+
+
+    <div class="form-group">
+      <label for="contact">お問い合わせ内容</label>
+      <textarea class="form-control" id="contact" row="3" name="contact">
+      <?php if(!empty($_POST['contact'])){echo h($_POST['contact']) ;} ?>
+      </textarea>
+    </div>
+
+    <div class ="form-check">
+      <input class="form-check-input" type="checkbox" id="caution" name="caution" value="1">
+      <label for="form-check-label" for="caution">注意事項にチェックする</label>
+    <div>
+
+    <input class="btn btn-info" type="submit" name="btn_confirm" value="確認する">
+    <input type="hidden" name="csrf" value="<?php echo $token; ?>">
+    </form>
+    </div><!-- .col-md-6 -->
+  <div>
+</div>
 <?php endif; ?>
 
 <!-- Optional JavaScript -->
