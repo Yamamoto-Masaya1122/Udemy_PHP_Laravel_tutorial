@@ -1,5 +1,6 @@
 <?php
 
+//ルーティングの機能を使えるように読み込んでいる。
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// 今回はコントローラを使わずに、'/'にアクセスしたら、welcomeというviewを表示できるようになっている。
 Route::get('/', function () {
     return view('welcome');
 });
