@@ -1,7 +1,9 @@
 <?php
 
-//ルーティングの機能を使えるように読み込んでいる。
+// ルーティングの機能を使えるように読み込んでいる。
 use Illuminate\Support\Facades\Route;
+// ルーティングの定義によってTestControllerを呼び出すのに必要な記述。
+use App\Http\Controllers\TestController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,3 +20,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+// tests/testのURLにアクセスするとTestControllerのindexアクションを呼び出す。
+Route::get('tests/test', [TestController::class, 'index']);
