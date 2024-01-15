@@ -209,6 +209,7 @@ return [
     */
 
     'aliases' => Facade::defaultAliases()->merge([
+        // オリジナルのファサードを追加したい時はここに記述する。
         // 'ExampleClass' => App\Example\ExampleClass::class,
     ])->toArray(),
 
