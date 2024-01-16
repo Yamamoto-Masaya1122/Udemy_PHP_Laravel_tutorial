@@ -3,6 +3,7 @@
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
     <form method="POST" action="{{ route('login') }}">
+        <!-- POST通信の時は@csrfが必要 -->
         @csrf
 
         <!-- Email Address -->
