@@ -10,7 +10,7 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                 <section class="text-gray-600 body-font relative">
-                <form method="post" action="{{ route('contacts.store') }}">
+                <form method="post" action="{{ route('contacts.update', ['id' => $contact->id ]) }}">
                   @csrf
                 <div class="container px-5 mx-auto">
                   
@@ -47,8 +47,8 @@
                       <div class="p-2 w-full">
                         <div class="relative">
                           <label class="leading-7 text-sm text-gray-600">性別</label><br>
-                          <input type="radio" name="gender" value="0">男性
-                          <input type="radio" name="gender" value="1">女性
+                          <input type="radio" name="gender" value="0" @if($contact->gender == 0) checked @endif>男性
+                          <input type="radio" name="gender" value="1" @if($contact->gender == 1) checked @endif>女性
                         </div>
                       </div>
 
@@ -57,12 +57,12 @@
                           <label for="age" class="leading-7 text-sm text-gray-600">年齢</label>
                           <select name="age">
                             <option value="">選択してください</option>
-                            <option value="1">〜19歳</option>
-                            <option value="2">20歳〜29歳</option>
-                            <option value="3">30歳〜39歳</option>
-                            <option value="4">40歳〜49歳</option>
-                            <option value="5">50歳〜59歳</option>
-                            <option value="6">60歳〜</option>
+                            <option value="1" @if($contact->age == 1) selected @endif>〜19歳</option>
+                            <option value="2" @if($contact->age == 2) selected @endif>20歳〜29歳</option>
+                            <option value="3" @if($contact->age == 3) selected @endif>30歳〜39歳</option>
+                            <option value="4" @if($contact->age == 4) selected @endif>40歳〜49歳</option>
+                            <option value="5" @if($contact->age == 5) selected @endif>50歳〜59歳</option>
+                            <option value="6" @if($contact->age == 6) selected @endif>60歳〜</option>
                           </select> 
                           
                         </div>
@@ -82,7 +82,7 @@
                       </div>
 
                       <div class="p-2 w-full">
-                      <button class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">新規登録する</button>
+                      <button class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">更新する</button>
                       </div>
                       
                     </div>
