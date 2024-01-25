@@ -11,6 +11,7 @@
                 <div class="p-6 text-gray-900">
                     index<br>
                     <a href="{{ route('contacts.create') }}" class="text-blue-500">新規登録</a>
+
                     <div class="lg:w-2/3 w-full mx-auto overflow-auto">
                     <table class="table-auto w-full text-left whitespace-no-wrap">
                         <thead>
@@ -34,7 +35,9 @@
                         @endforeach
                         </tbody>
                     </table>
-                </div>
+                    </div>
+                    {{ $contacts->links() }}
+                <div>
             </div>
         </div>
     </div>
