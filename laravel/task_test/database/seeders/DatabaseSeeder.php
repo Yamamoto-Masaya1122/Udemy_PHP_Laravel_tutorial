@@ -17,6 +17,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             TestSeeder::class,
             UserSeeder::class,
+            AreaSeeder::class, //親テーブルが先に記述
+            ShopSeeder::class //小テーブルが後に記述
         ]);
         \App\Models\ContactForm::factory(100)->create();
 
