@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('shops', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->foreignId('area_id');
+            $table->foreignId('area_id')->constrained(); //constrained();をつけることで存在しない外部キーは登録できなくする。外部キー制約
             $table->timestamps();
         });
     }
