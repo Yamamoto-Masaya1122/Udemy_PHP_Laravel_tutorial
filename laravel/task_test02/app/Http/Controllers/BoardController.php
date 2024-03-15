@@ -9,6 +9,7 @@ class BoardController extends Controller
 {
     public function index()
     {
+        dd('test');
         // Eloquent(エロクアント)
         $values = Board::all();
 
