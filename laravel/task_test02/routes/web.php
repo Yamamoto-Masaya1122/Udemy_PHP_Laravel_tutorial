@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BoardController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ContactFormController;
+use App\Http\Controllers\ShopController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,6 +35,8 @@ Route::prefix('contacts')->middleware(['auth'])
     Route::post('/{id}', 'update')->name('update');
     Route::post('/{id}/destroy', 'destroy')->name('destroy');
 });
+
+Route::get('shops', [ShopController::class, 'index']);
 
 Route::get('/', function () {
     return view('welcome');
